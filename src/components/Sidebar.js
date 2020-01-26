@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { jsx, css } from '@emotion/core';
 import ReactDom from 'react-dom';
 import { withRouter } from 'react-router';
+import FontAwesome from 'react-fontawesome';
 
 import Sidebar from 'react-sidebar';
 
@@ -107,12 +108,17 @@ class MySidebar extends Component {
               width: 15,
             }}
           >
+              <FontAwesome name={'fas-fa-bars'} style={{ fontSize: 24, color: '#000000' }} />
+              HELLO
             <i className={'fas fa-bars'} style={{ fontSize: 24, color: '#000000' }}></i>
           </div>
         ) : (
           <div style={{ height: 61 }} />
         )}
-        {!this.state.leftSidebarDocked ?<div>MELISSA KWAN</div> : <div />}
+        {!this.state.leftSidebarDocked ?
+            <div>
+                <div>MELISSA KWAN</div>
+            </div> : <div />}
         <div style={{ width: 15 }} />
       </div>
     );
