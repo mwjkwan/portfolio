@@ -7,19 +7,19 @@ class NavigationBar extends Component {
   render() {
     var links = [
       {
-        to: '/restaurant',
+        to: '/home',
         icon: 'home',
         text: 'Home',
       },
       {
-        to: '/restaurant/check-in',
+        to: '/projects',
         icon: 'th-list',
-        text: 'Check-in',
+        text: 'Projects',
       },
       {
-        to: '/restaurant/stats',
+        to: '/multimedia',
         icon: 'chart-area',
-        text: 'Stats',
+        text: 'Multimedia',
       },
     ];
 

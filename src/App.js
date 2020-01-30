@@ -36,18 +36,10 @@ class App extends React.Component {
   }
  
   render() {
-    const prefix = '/restaurant';
+    const prefix = '';
 
     return (
       <Router>
-        {/* <Sidebar
-          sidebar={<b>Sidebar content</b>}
-          open={this.state.sidebarOpen}
-          docked={this.state.sidebarDocked}
-          onSetOpen={this.onSetSidebarOpen}
-        >
-          <b>Main content</b>
-      </Sidebar> */}
         <div className="Page">
           <Sidebar leftSidebar={<NavigationBar />}>
             <Switch>
@@ -58,13 +50,13 @@ class App extends React.Component {
               />
               <Route
                 exact
-                path={`${prefix}/check-in`}
-                render={() => <div>School</div>}
+                path={`${prefix}/projects`}
+                render={() => <div>Projects</div>}
               />
               <Route
                 exact
-                path={`${prefix}/stats`}
-                render={() => <div>Stats</div>}
+                path={`${prefix}/multimedia`}
+                render={() => <div>Multimedia</div>}
               />
             </Switch>
           </Sidebar>

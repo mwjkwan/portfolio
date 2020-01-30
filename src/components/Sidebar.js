@@ -35,7 +35,7 @@ const sidebarStyle = css`
     width: 250px;
     text-align: right;
     overflow: visible;
-    background-color: #515151 !important;
+    background-color: #AAAAAA;
 
     a {
       font-family: 'Apercu-light';
