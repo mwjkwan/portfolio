@@ -10,7 +10,7 @@ const navbarStyle = css`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
+    text-align: right;
     margin: 30px 50px 0px 50px;
     color: #515151;
     position: relative;

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import ReactDom from 'react-dom';
 import { withRouter } from 'react-router';
 
 import Sidebar from 'react-sidebar';
 
-var leftSidebar = 250;
-var center = 400;
+const leftSidebar = 250;
+const center = 400;
 
 const sidebarStyle = css`
   .SidebarContent {
@@ -28,15 +28,14 @@ const sidebarStyle = css`
       width: 100%;
       justify-content: space-between;
       align-items: center;
-      background: #f9a9a5;
     }
   }
 
   .Sidebar {
     width: 250px;
-    text-align: left;
-    background: #f9a9a5;
+    text-align: right;
     overflow: visible;
+    background-color: #515151 !important;
 
     a {
       font-family: 'Apercu-light';
@@ -123,7 +122,6 @@ class MySidebar extends Component {
     return (
       <div
         style={{
-          backgroundColor: '#F9A9A5',
           padding: mobile ? 0 : '2em',
           minHeight: '100vh',
         }}
