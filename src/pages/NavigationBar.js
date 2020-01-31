@@ -7,7 +7,7 @@ class NavigationBar extends Component {
   render() {
     var links = [
       {
-        to: '/home',
+        to: '/',
         icon: 'home',
         text: 'Home',
       },

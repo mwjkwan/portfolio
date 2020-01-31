@@ -45,8 +45,8 @@ class App extends React.Component {
             <Switch>
               <Route
                 exact
-                path={prefix}
-                render={() => <div>Home</div>}
+                path={`/`}
+                render={() => <div>HOME</div>}
               />
               <Route
                 exact

@@ -4,6 +4,7 @@ import { Component } from 'react';
 import { jsx, css } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import profilePhoto from 'assets/MelissaKwanProfile.jpg'
 
 const navbarStyle = css`
   .Navigation {
@@ -14,17 +15,13 @@ const navbarStyle = css`
     margin: 30px 50px 0px 50px;
     color: #515151;
     position: relative;
-    height: calc(100% - 0px);
-    min-height: 645px;
     overflow: auto;
+    border: 1px solid black;
+    padding: 1em;
 
     logo {
       textalign: center;
       width: 100%;
-    }
-
-    .links {
-      margin-left: 5px;
     }
 
     .link {
@@ -32,24 +29,32 @@ const navbarStyle = css`
       position: relative;
       cursor: pointer;
       line-height: 27px;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.1em;
       color: #ffffff;
+      text-decoration: none;
     }
 
     a {
       color: #000000;
       font-size: 16px;
+      text-decoration: none;
+      letter-spacing: 0.1em;
 
       &:hover {
         text-decoration: none;
       }
     }
 
+    .profile-photo {
+      border-radius: 50%;
+      max-width: 100px;
+    }
+
     .Highlight {
       a {
+        font-size: 16px;
         font-family: 'Apercu';
-        opacity: 1;
-        font-weight: bold;
+        color: #AAAFFF;
       }
     }
   }
@@ -80,7 +85,8 @@ export default class Navbar extends Component {
       <div css={navbarStyle}>
         <div className="Navigation">
           <div className="logo">
-            Melissa Kwan
+            <img className="profile-photo" src={profilePhoto} alt="Melissa Kwan" />
+            <h1>Melissa Kwan</h1>
           </div>
           <div style={{ height: 25, textAlign: 'left' }} />
           <div className="links">

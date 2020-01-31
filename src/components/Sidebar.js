@@ -107,6 +107,7 @@ class MySidebar extends Component {
             }}
           >
             <i className={'fas fa-bars'} style={{ fontSize: 24, color: '#000000' }}></i>
+            HELLO
           </div>
         ) : (
           <div style={{ height: 61 }} />
