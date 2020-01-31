@@ -21,6 +21,16 @@ class NavigationBar extends Component {
         icon: 'chart-area',
         text: 'Multimedia',
       },
+      {
+        to: '/writing',
+        icon: 'chart-area',
+        text: 'Writing',
+      },
+      {
+        to: '/resume',
+        icon: 'chart-area',
+        text: 'Resume',
+      },
     ];
 
     const { location } = this.props;

@@ -16,7 +16,6 @@ const navbarStyle = css`
     color: #515151;
     position: relative;
     overflow: auto;
-    border: 1px solid black;
     padding: 1em;
 
     logo {
@@ -68,7 +67,7 @@ const renderLink = (link, path) => {
     >
       <Link to={link.to}>
         <i className={'icon fas fa-' + link.icon}></i>
-        {link.text.toUpperCase()}
+        {link.text}
       </Link>
     </div>
   );

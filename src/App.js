@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from './components/Sidebar';
 import NavigationBar from './pages/NavigationBar';
+import 'styles/styles.scss';
 
 import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -46,7 +47,7 @@ class App extends React.Component {
               <Route
                 exact
                 path={`/`}
-                render={() => <div>HOME</div>}
+                render={() => <div>About</div>}
               />
               <Route
                 exact
@@ -57,6 +58,16 @@ class App extends React.Component {
                 exact
                 path={`${prefix}/multimedia`}
                 render={() => <div>Multimedia</div>}
+              />
+              <Route
+                exact
+                path={`${prefix}/writing`}
+                render={() => <div>Papers</div>}
+              />
+              <Route
+                exact
+                path={`${prefix}/resume`}
+                render={() => <div>Resume</div>}
               />
             </Switch>
           </Sidebar>
