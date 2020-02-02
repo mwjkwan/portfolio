@@ -91,19 +91,14 @@ h4,
 a {
   color: $text-color;
   text-decoration:none;
-  display: inline-block;
+  margin-bottom: 5px;
 }
 
 a {
   font-family: 'apercu';
   font-weight: 400;
-  margin-bottom: 0;
-}
-
-a > button {
-  font-family: 'apercu-light';
-  font-weight: 400;
-  margin-bottom: 0;
+  margin-bottom: 5;
+  margin-top: 5;
 }
 
 p {

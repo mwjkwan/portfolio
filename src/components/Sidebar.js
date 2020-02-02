@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
 import React, { Component } from 'react';
-import { css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import ReactDom from 'react-dom';
 import { withRouter } from 'react-router';
 
@@ -31,10 +33,8 @@ const sidebarStyle = css`
   }
 
   .Sidebar {
-    width: 250px;
     text-align: right;
     overflow: visible;
-    background-color: #AAAAAA;
 
     a {
       font-family: 'Apercu-light';
@@ -49,7 +49,12 @@ const sidebarStyle = css`
 
   .centered-mobile {
     text-align: center !important;
-    align-content: center !important;
+    .Navigation {
+      padding: 2em;
+    }
+    .link {
+      margin-bottom: 5px !important;
+    }
   }
 `;
 
@@ -116,8 +121,8 @@ class MySidebar extends Component {
         {mobile && this.renderMobile()}
         <div
           style={{
-            marginTop: mobile ? 61 : 0,
-            paddingTop: mobile ? 20 : 0,
+            marginTop: mobile ? 0 : 10,
+            padding: mobile ? '1.5em' : 0,
             height: mobile ? "calc(100% - 45px)": "auto",
             overflowY: mobile ? 'auto' : 'hidden',
             overflowX: 'hidden',

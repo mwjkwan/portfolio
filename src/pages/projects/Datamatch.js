@@ -3,10 +3,10 @@
 import React, { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 
-import Description from '../components/Description';
+import Description from 'components/Description';
 import Thumbnail from '../components/Thumbnail';
+import Article from '../components/Article';
 import Photo from '../assets/photos/DiegoFigueroa-MK.JPG'
-import Article from '../components/Article'
 
 const aboutMe = `I'm a sophomore at Harvard studying computer science and philosophy. 
     I'm passionate about writing elegant code, simplifying designs, and telling the stories behind data. 
@@ -15,9 +15,21 @@ const aboutMe = `I'm a sophomore at Harvard studying computer science and philos
     interact with the media: which debate moments blow up and which don't, and how we can quantify them.`;
 
 export default class PageAbout extends Component {
+  renderPage() {
+      return (
+        <Article
+            description="Design and web development for matchmaking service used by over 27,000 students."
+            header="Datamatch"
+            image={Photo}
+            technologies={'React, Redux, Firebase, Figma'}
+        >
+            Testing testing 123
+        </Article>
+      );
+  }
   render() {
     return (
-      <Article>
+      <div>
         <h2>About</h2>
         <br />
         <Description content={aboutMe} />
@@ -28,7 +40,7 @@ export default class PageAbout extends Component {
           technologies={'React, Redux, Firebase, Figma'}
           link="/projects"
         />
-      </Article>
+      </div>
     );
   }
 }

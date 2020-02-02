@@ -20,12 +20,6 @@
   font-weight: bold;
 }
 
-.Box {
-  padding: 20px;
-  border: 1px solid #f3f3f3;
-  background: white;
-}
-
 .Logo {
   display: inline-block;
   cursor: pointer;
@@ -40,34 +34,6 @@
 
 .Shadow {
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-}
-
-.email {
-  display: flex;
-  align-items: center;
-
-  input {
-    border: none;
-    background: lightgrey !important;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 30px;
-  }
-
-  button {
-    width: 28px !important;
-    min-width: 28px;
-    height: 28px;
-    border-radius: 16px;
-  }
-
-  i {
-    font-size: 12px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .Highlight {

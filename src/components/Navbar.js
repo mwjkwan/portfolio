@@ -10,18 +10,11 @@ const navbarStyle = css`
   .Navigation {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: right;
-    margin: 30px 50px 0px 50px;
+    align-items: right;
     color: #515151;
     position: relative;
     overflow: auto;
-    padding: 1em;
-
-    logo {
-      textalign: center;
-      width: 100%;
-    }
+    padding: 4em;
 
     .link {
       margin-bottom: 10px;
@@ -55,6 +48,10 @@ const navbarStyle = css`
         color: #AAAFFF;
       }
     }
+
+    .mobile {
+      display: inline-block;
+    }
   }
 `;
 
@@ -73,26 +70,57 @@ const renderLink = (link, path) => {
 };
 
 export default class Navbar extends Component {
-  render() {
+
+  renderLinks() {
     const { links, pathname } = this.props;
 
     var parts = pathname.split('/');
     var path = '/' + parts[1] + (parts[2] ? '/' + parts[2] : '');
 
     return (
+      <div className="links">
+        {links.map(link => {
+          return renderLink(link, path);
+        })}
+      </div>
+    );
+  }
+
+  renderMobile() {
+    return (
+      <div css={navbarStyle}>
+        <div className="Navigation mobile">
+          <div className="logo">
+            <img className="profile-photo" src={profilePhoto} alt="Melissa Kwan" />
+            <h1>Melissa <br></br> Kwan</h1>
+          </div>
+          <div>
+            {this.renderLinks()}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderSide() {
+    return (
       <div css={navbarStyle}>
         <div className="Navigation">
           <div className="logo">
             <img className="profile-photo" src={profilePhoto} alt="Melissa Kwan" />
-            <h1>Melissa Kwan</h1>
+            <h1>Melissa <br></br> Kwan</h1>
           </div>
-          <div style={{ height: 25, textAlign: 'left' }} />
-          <div className="links">
-            {links.map(link => {
-              return renderLink(link, path);
-            })}
-          </div>
+          {this.renderLinks()}
         </div>
+      </div>
+    )
+  }
+
+  render() {
+    const { mobile } = this.props;
+    return (
+      <div css={navbarStyle}>
+        {mobile ? this.renderMobile() : this.renderSide()}
       </div>
     );
   }
