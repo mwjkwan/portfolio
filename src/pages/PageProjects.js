@@ -1,12 +1,17 @@
 /** @jsx jsx */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 
 import Description from '../components/Description';
-import Thumbnail from '../components/Thumbnail';
-import Photo from '../assets/photos/DiegoFigueroa-MK.JPG'
 import Article from '../components/Article'
+
+import Datamatch from 'pages/projects/Datamatch'
+import HarvardOpenDataProject from 'pages/projects/HarvardOpenDataProject'
+import LayoutAlgo from 'pages/projects/LayoutAlgo'
+import CS51 from 'pages/projects/CS51'
+
+import { Container, Row, Col } from 'react-grid-system';
 
 const aboutMe = `I'm a sophomore at Harvard studying computer science and philosophy. 
     I'm passionate about writing elegant code, simplifying designs, and telling the stories behind data. 
@@ -18,21 +23,39 @@ const content = {
     header: "Projects",
 }
 
+const gridStyle = css`
+    .col {
+      padding-left: 0 !important;
+      padding-right: 1em;
+    };
+
+    .col >* {
+      margin-bottom: 1em;
+    }
+`;
+
 export default class PageProjects extends Component {
   render() {
     return (
-      <Article
-        {...content}
-      >
-        <Description>{aboutMe}</Description>
-        <Thumbnail
-          description="Design and web development for matchmaking service used by over 27,000 students."
-          header="Datamatch"
-          image={Photo}
-          technologies={'React, Redux, Firebase, Figma'}
-          link="/projects/datamatch"
-        />
-      </Article>
+      <div css={gridStyle}> 
+        <Article
+          {...content}
+        >
+          <Description>{aboutMe}</Description>
+          <Container gutterWidth={0}>
+            <Row>
+              <Col className="col" sm={6}>
+                <Datamatch thumbnail />
+                <LayoutAlgo thumbnail />
+              </Col>
+              <Col className="col" sm={6}>
+                <HarvardOpenDataProject thumbnail />
+                <CS51 thumbnail />
+              </Col>
+            </Row>
+          </Container>
+        </Article>
+      </div>
     );
   }
 }
