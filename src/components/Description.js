@@ -12,11 +12,10 @@ const descriptionStyle = css`
 
 export default class Description extends Component {
   render() {
-    const { content } = this.props;
     return (
       <div css={descriptionStyle}>
         <div class="description">
-          {content}
+          {this.props.children}
         </div>
       </div>
     );

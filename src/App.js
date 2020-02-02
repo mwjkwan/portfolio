@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from './components/Sidebar';
 import NavigationBar from './pages/NavigationBar';
 import PageAbout from './pages/PageAbout'
+import Datamatch from './pages/projects/Datamatch'
 import 'styles/styles.scss';
 
 import { Route, Switch } from 'react-router-dom';
@@ -69,6 +70,11 @@ class App extends React.Component {
                 exact
                 path={`${prefix}/resume`}
                 render={() => <div>Resume</div>}
+              />
+              <Route
+                exact
+                path={`${prefix}/projects/datamatch`}
+                render={() => <Datamatch />}
               />
             </Switch>
           </Sidebar>

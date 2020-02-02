@@ -26,7 +26,7 @@ export default class PageAbout extends Component {
           header="Datamatch"
           image={Photo}
           technologies={'React, Redux, Firebase, Figma'}
-          link="/projects"
+          link="/projects/datamatch"
         />
       </Article>
     );
