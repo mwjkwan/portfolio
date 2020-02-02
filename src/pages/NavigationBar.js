@@ -1,4 +1,7 @@
+/** @jsx jsx */
+
 import React, { Component } from 'react';
+import { jsx } from '@emotion/core';
 import { withRouter } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';

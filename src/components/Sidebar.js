@@ -13,7 +13,7 @@ const sidebarStyle = css`
     text-align: left;
     padding: 20px;
     min-width: 300px;
-    min-height: 100%;
+    min-height: 90%;
     position: relative;
 
     .Navbar {
@@ -97,64 +97,6 @@ class MySidebar extends Component {
     }
   }
 
-  // renderMobile() {
-  //   return (
-  //     <div className={'Navbar'}>
-  //       {!this.state.leftSidebarDocked ? (
-  //         <div
-  //           onClick={() => this.setState({ leftSidebarOpen: true })}
-  //           style={{
-  //             marginBottom: 0,
-  //             cursor: 'pointer',
-  //             paddingTop: 0,
-  //             width: 15,
-  //           }}
-  //         >
-  //           <i className={'fas fa-bars'} style={{ fontSize: 24, color: '#000000' }}></i>
-  //           HELLO
-  //         </div>
-  //       ) : (
-  //         <div style={{ height: 61 }} />
-  //       )}
-  //       {!this.state.leftSidebarDocked ?<div>MELISSA KWAN</div> : <div />}
-  //       <div style={{ width: 15 }} />
-  //     </div>
-  //   );
-  // }
-
-  // renderMobile() {
-  //   return (
-  //     <div
-  //       style={{
-  //         padding: 0,
-  //         minHeight: '100vh',
-  //       }}
-  //     >
-  //       {this.props.children}
-  //       {this.props.children}
-  //       <div
-  //         // className={'SidebarContent'}
-  //         style={{
-  //           backgroundColor: 'white',
-  //           padding: '2em',
-  //           minHeight: '90vh',
-  //         }}
-  //       >
-  //         HELLO>
-  //         <div
-  //           style={{
-  //             marginTop: 61,
-  //             paddingTop: 20,
-  //             // height: mobile ? "calc(100% - 45px)": "auto",
-  //             position: 'relative',
-  //           }}
-  //         >
-  //           {this.props.children}
-  //         </div>
-  //       </div>
-  //     </div>);
-  // }
-
   renderMobile() {
     return (
       <div className="centered-mobile">
@@ -169,30 +111,20 @@ class MySidebar extends Component {
       <div
         style={{
           padding: mobile ? 0 : '2em',
-          minHeight: '100vh',
         }}
       >
+        {mobile && this.renderMobile()}
         <div
-          className={'SidebarContent'}
           style={{
-            backgroundColor: 'white',
-            padding: '2em',
-            minHeight: '90vh',
+            marginTop: mobile ? 61 : 0,
+            paddingTop: mobile ? 20 : 0,
+            height: mobile ? "calc(100% - 45px)": "auto",
+            overflowY: mobile ? 'auto' : 'hidden',
+            overflowX: 'hidden',
+            position: 'relative',
           }}
         >
-          {mobile && this.renderMobile()}
-          <div
-            style={{
-              marginTop: mobile ? 61 : 0,
-              paddingTop: mobile ? 20 : 0,
-              // height: mobile ? "calc(100% - 45px)": "auto",
-              overflowY: mobile ? 'auto' : 'hidden',
-              overflowX: 'hidden',
-              position: 'relative',
-            }}
-          >
-            {this.props.children}
-          </div>
+          {this.props.children}
         </div>
       </div>
     );

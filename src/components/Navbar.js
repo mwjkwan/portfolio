@@ -45,7 +45,6 @@ const navbarStyle = css`
     }
 
     .profile-photo {
-      border-radius: 50%;
       max-width: 100px;
     }
 
