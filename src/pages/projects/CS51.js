@@ -7,15 +7,15 @@ import Thumbnail from 'components/Thumbnail';
 import Article from 'components/Article';
 
 const content = {
-    header: "Datamatch",
-    description: "Design and web development for matchmaking service used by over 27,000 students.",
+    header: "CS51 Teaching Materials",
+    description: "Functional programming course materials for weekly code review with 15 students.",
     image: require('assets/photos/DiegoFigueroa-MK.JPG'),
-    technologies: "React, Redux, Firebase, Figma",
-    link: "/projects/datamatch",
+    technologies: "OCaml",
+    link: "/projects/cs51",
 }
 
-export default class Datamatch extends Component {
-    
+export default class CS51 extends Component {
+  
   renderPage() {
       return (
         <Article

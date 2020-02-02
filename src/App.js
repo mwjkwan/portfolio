@@ -2,7 +2,11 @@ import React from "react";
 import Sidebar from './components/Sidebar';
 import NavigationBar from './pages/NavigationBar';
 import PageAbout from './pages/PageAbout'
+import PageProjects from './pages/PageProjects'
 import Datamatch from './pages/projects/Datamatch'
+import HarvardOpenDataProject from './pages/projects/HarvardOpenDataProject'
+import LayoutAlgo from './pages/projects/LayoutAlgo'
+import CS51 from './pages/projects/CS51'
 import 'styles/styles.scss';
 
 import { Route, Switch } from 'react-router-dom';
@@ -54,7 +58,7 @@ class App extends React.Component {
               <Route
                 exact
                 path={`${prefix}/projects`}
-                render={() => <div>Projects</div>}
+                render={() => <PageProjects />}
               />
               <Route
                 exact
@@ -75,6 +79,21 @@ class App extends React.Component {
                 exact
                 path={`${prefix}/projects/datamatch`}
                 render={() => <Datamatch />}
+              />
+              <Route
+                exact
+                path={`${prefix}/projects/hodp`}
+                render={() => <HarvardOpenDataProject />}
+              />
+              <Route
+                exact
+                path={`${prefix}/projects/page-layout-algorithm`}
+                render={() => <LayoutAlgo />}
+              />
+              <Route
+                exact
+                path={`${prefix}/projects/cs51`}
+                render={() => <CS51 />}
               />
             </Switch>
           </Sidebar>

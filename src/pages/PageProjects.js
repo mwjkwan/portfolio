@@ -14,12 +14,16 @@ const aboutMe = `I'm a sophomore at Harvard studying computer science and philos
     as well as design (Adobe Creative Suite, Figma). I'm really excited to learn more about civic tech and how campaigns can 
     interact with the media: which debate moments blow up and which don't, and how we can quantify them.`;
 
-export default class PageAbout extends Component {
+const content = {
+    header: "Projects",
+}
+
+export default class PageProjects extends Component {
   render() {
     return (
-      <Article>
-        <h2>About</h2>
-        <br />
+      <Article
+        {...content}
+      >
         <Description>{aboutMe}</Description>
         <Thumbnail
           description="Design and web development for matchmaking service used by over 27,000 students."

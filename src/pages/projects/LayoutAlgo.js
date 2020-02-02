@@ -7,15 +7,15 @@ import Thumbnail from 'components/Thumbnail';
 import Article from 'components/Article';
 
 const content = {
-    header: "Datamatch",
-    description: "Design and web development for matchmaking service used by over 27,000 students.",
+    header: "Page Layout Algorithm",
+    description: "Algorithm for page layout generation of websites.",
     image: require('assets/photos/DiegoFigueroa-MK.JPG'),
-    technologies: "React, Redux, Firebase, Figma",
-    link: "/projects/datamatch",
+    technologies: "JavaScript",
+    link: "/projects/page-layout-algorithm",
 }
 
-export default class Datamatch extends Component {
-    
+export default class LayoutAlgo extends Component {
+  
   renderPage() {
       return (
         <Article

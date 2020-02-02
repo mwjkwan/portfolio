@@ -1,21 +1,21 @@
 /** @jsx jsx */
 
-import React, { Component } from 'react';
-import { css, jsx } from '@emotion/core';
+import { Component } from 'react';
+import { jsx } from '@emotion/core';
 
 import Thumbnail from 'components/Thumbnail';
 import Article from 'components/Article';
 
 const content = {
-    header: "Datamatch",
-    description: "Design and web development for matchmaking service used by over 27,000 students.",
+    header: "Harvard Open Data Project",
+    description: "Data analysis projects, web development.",
     image: require('assets/photos/DiegoFigueroa-MK.JPG'),
-    technologies: "React, Redux, Firebase, Figma",
-    link: "/projects/datamatch",
+    technologies: "R, Python, Flask, HTML, CSS, JavaScript",
+    link: "/projects/hodp",
 }
 
-export default class Datamatch extends Component {
-    
+export default class HarvardOpenDataProject extends Component {
+  
   renderPage() {
       return (
         <Article

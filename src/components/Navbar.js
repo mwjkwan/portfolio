@@ -56,13 +56,13 @@ const navbarStyle = css`
 `;
 
 const renderLink = (link, path) => {
+  const highlight = link.to !== '/' ? path.includes(link.to) : path === '/';
   return (
     <div
       key={link.text}
-      className={'link' + (path === link.to ? ' Highlight' : '')}
+      className={'link' + (highlight ? ' Highlight' : '')}
     >
       <Link to={link.to}>
-        <i className={'icon fas fa-' + link.icon}></i>
         {link.text}
       </Link>
     </div>
