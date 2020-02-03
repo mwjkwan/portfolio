@@ -14,9 +14,7 @@ export default class Description extends Component {
   render() {
     return (
       <div css={descriptionStyle}>
-        <div class="description">
-          {this.props.children}
-        </div>
+        <div class="description">{this.props.children}</div>
       </div>
     );
   }

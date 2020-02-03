@@ -22,7 +22,7 @@ class NavigationBar extends Component {
       {
         to: '/multimedia',
         icon: 'chart-area',
-        text: 'Multimedia',
+        text: 'Media',
       },
       {
         to: '/writing',
@@ -38,12 +38,7 @@ class NavigationBar extends Component {
 
     const { location } = this.props;
 
-    return (
-      <Navbar
-        links={links}
-        pathname={location.pathname}
-      />
-    );
+    return <Navbar links={links} pathname={location.pathname} />;
   }
 }
 

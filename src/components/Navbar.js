@@ -4,7 +4,7 @@ import { Component } from 'react';
 import { jsx, css } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import profilePhoto from 'assets/MelissaKwanProfile.jpg'
+import profilePhoto from 'assets/MelissaKwanProfile.jpg';
 
 const navbarStyle = css`
   .Navigation {
@@ -45,7 +45,7 @@ const navbarStyle = css`
       a {
         font-size: 16px;
         font-family: 'Apercu';
-        color: #AAAFFF;
+        color: #77bbdd;
       }
     }
 
@@ -58,19 +58,13 @@ const navbarStyle = css`
 const renderLink = (link, path) => {
   const highlight = link.to !== '/' ? path.includes(link.to) : path === '/';
   return (
-    <div
-      key={link.text}
-      className={'link' + (highlight ? ' Highlight' : '')}
-    >
-      <Link to={link.to}>
-        {link.text}
-      </Link>
+    <div key={link.text} className={'link' + (highlight ? ' Highlight' : '')}>
+      <Link to={link.to}>{link.text}</Link>
     </div>
   );
 };
 
 export default class Navbar extends Component {
-
   renderLinks() {
     const { links, pathname } = this.props;
 
@@ -91,15 +85,19 @@ export default class Navbar extends Component {
       <div css={navbarStyle}>
         <div className="Navigation mobile">
           <div className="logo">
-            <img className="profile-photo" src={profilePhoto} alt="Melissa Kwan" />
-            <h1>Melissa <br></br> Kwan</h1>
+            <img
+              className="profile-photo"
+              src={profilePhoto}
+              alt="Melissa Kwan"
+            />
+            <h1>
+              Melissa <br></br> Kwan
+            </h1>
           </div>
-          <div>
-            {this.renderLinks()}
-          </div>
+          <div>{this.renderLinks()}</div>
         </div>
       </div>
-    )
+    );
   }
 
   renderSide() {
@@ -107,13 +105,19 @@ export default class Navbar extends Component {
       <div css={navbarStyle}>
         <div className="Navigation">
           <div className="logo">
-            <img className="profile-photo" src={profilePhoto} alt="Melissa Kwan" />
-            <h1>Melissa <br></br> Kwan</h1>
+            <img
+              className="profile-photo"
+              src={profilePhoto}
+              alt="Melissa Kwan"
+            />
+            <h1>
+              Melissa <br></br> Kwan
+            </h1>
           </div>
           {this.renderLinks()}
         </div>
       </div>
-    )
+    );
   }
 
   render() {

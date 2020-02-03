@@ -103,11 +103,7 @@ class MySidebar extends Component {
   }
 
   renderMobile() {
-    return (
-      <div className="centered-mobile">
-        {this.props.leftSidebar}
-      </div>
-    );
+    return <div className="centered-mobile">{this.props.leftSidebar}</div>;
   }
 
   renderSidebarContent() {
@@ -123,7 +119,7 @@ class MySidebar extends Component {
           style={{
             marginTop: mobile ? 0 : 10,
             padding: mobile ? '1.5em' : 0,
-            height: mobile ? "calc(100% - 45px)": "auto",
+            height: mobile ? 'calc(100% - 45px)' : 'auto',
             overflowY: mobile ? 'auto' : 'hidden',
             overflowX: 'hidden',
             position: 'relative',

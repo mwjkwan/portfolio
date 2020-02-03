@@ -4,12 +4,12 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 
 import Description from '../components/Description';
-import Article from '../components/Article'
+import Article from '../components/Article';
 
-import Datamatch from 'pages/projects/Datamatch'
-import HarvardOpenDataProject from 'pages/projects/HarvardOpenDataProject'
-import LayoutAlgo from 'pages/projects/LayoutAlgo'
-import CS51 from 'pages/projects/CS51'
+import Datamatch from 'pages/projects/Datamatch';
+import HarvardOpenDataProject from 'pages/projects/HarvardOpenDataProject';
+import LayoutAlgo from 'pages/projects/LayoutAlgo';
+import CS51 from 'pages/projects/CS51';
 
 import { Container, Row, Col } from 'react-grid-system';
 
@@ -20,29 +20,24 @@ const aboutMe = `I'm a sophomore at Harvard studying computer science and philos
     interact with the media: which debate moments blow up and which don't, and how we can quantify them.`;
 
 const content = {
-    header: "Projects",
-}
+  header: 'Projects',
+};
 
-const gridStyle = css`
-    .col {
-      padding-left: 0 !important;
-      padding-right: 1em;
-    };
-
-    .col >* {
-      margin-bottom: 1em;
-    }
+const projectStyle = css`
+  .project-grid {
+    max-width: 60em !important;
+  }
+  .col {
+    align-items: left !important;
+  }
 `;
 
 export default class PageProjects extends Component {
   render() {
     return (
-      <div css={gridStyle}> 
-        <Article
-          {...content}
-        >
-          <Description>{aboutMe}</Description>
-          <Container gutterWidth={0}>
+      <div css={projectStyle}>
+        <Article {...content}>
+          <Container className="project-grid" gutterWidth={0}>
             <Row>
               <Col className="col" sm={6}>
                 <Datamatch thumbnail />
