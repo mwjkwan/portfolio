@@ -1,7 +1,6 @@
 /** @jsx jsx */
 
 import { css, jsx } from '@emotion/core';
-import { Link } from 'react-router-dom';
 import Description from 'components/Description';
 
 const articleStyle = css`
