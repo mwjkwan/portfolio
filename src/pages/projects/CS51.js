@@ -23,14 +23,16 @@ const text = {
   focuses on programming applications, CS51 focuses on coding well: writing software that is reusable, readable
   and easily maintained. The class requires students to get in a recursive mindset and to think about how to 
   break problems down into parts, and explaining the concepts has been such a rewarding experience as a TF.`,
-}
+};
 
 export default class CS51 extends Component {
   renderPage() {
-    return <Article {...content}>
-    <div>{text.intro}</div>
-    <div>{text.background}</div>
-  </Article>;;
+    return (
+      <Article {...content}>
+        <div>{text.intro}</div>
+        <div>{text.background}</div>
+      </Article>
+    );
   }
 
   render() {

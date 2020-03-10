@@ -18,13 +18,15 @@ const text = {
   intro: `As the Publisher for HODP, I redesigned and implemented the website using Python, Flask, and Jinja.
   I also taught Python and Jupyter Notebook bootcamp session for 30 new members, and serve on the team that
   maintains codebase of web apps hosted on the website.`,
-}
+};
 
 export default class HarvardOpenDataProject extends Component {
   renderPage() {
-    return <Article {...content}>
-    <div>{text.intro}</div>
-  </Article>;
+    return (
+      <Article {...content}>
+        <div>{text.intro}</div>
+      </Article>
+    );
   }
 
   render() {

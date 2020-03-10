@@ -19,13 +19,15 @@ const text = {
   and other SMBs. I outlined product roadmap for the second version of the generator, improved and re-implemented
   flexible page layout algorithm in JavaScript, and built React components for use in generated websites.
   Ultimately, these improvements helped to reduce our manual website edit time by 50%.`,
-}
+};
 
 export default class LayoutAlgo extends Component {
   renderPage() {
-    return <Article {...content}>
-    <div>{text.intro}</div>
-  </Article>;
+    return (
+      <Article {...content}>
+        <div>{text.intro}</div>
+      </Article>
+    );
   }
 
   render() {

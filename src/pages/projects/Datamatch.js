@@ -24,15 +24,16 @@ const text = {
   validate date codes automatically.`,
   development: `Besides design, I also contributed to the web team by re-implementing the profile page
   and the restaurant portal summary statistics. Our tech stack uses React, Redux, and Firebase.`,
-}
-  
+};
 
 export default class Datamatch extends Component {
   renderPage() {
-    return <Article {...content}>
-      <div>{text.intro}</div>
-      <div>{text.development}</div>
-    </Article>;
+    return (
+      <Article {...content}>
+        <div>{text.intro}</div>
+        <div>{text.development}</div>
+      </Article>
+    );
   }
 
   render() {
