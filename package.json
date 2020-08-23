@@ -1,45 +1,52 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/core": "^10.0.27",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "babel-loader": "^8.0.6",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-grid-system": "^6.0.7",
-    "react-images": "^1.1.0-beta.3",
-    "react-photo-gallery": "^8.0.0",
-    "react-player": "^1.15.2",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
-    "react-sidebar": "^3.0.2",
-    "reactstrap": "^8.4.1"
+  "private": false,
+  "name": "hodp-website",
+  "version": "1.0.0",
+  "author": "Sanity <hello@sanity.io>",
+  "engines": {
+    "node": "10.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "empty-cache": "lerna run empty-cache",
+    "init": "cd studio && sanity init && lerna run graphql-deploy",
+    "format": "lerna run format",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "lerna run lint",
+    "now-deploy": "now && now alias",
+    "workers-start": "lerna run workers-start",
+    "workers-deploy": "lerna run workers-deploy",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run empty-cache && lerna run start --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "lerna": "^3.22.0",
+    "rimraf": "^2.6.3"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "d3-ease": "^1.0.6",
+    "d3-fetch": "^1.1.2",
+    "d3-format": "^1.4.4",
+    "d3-interpolate": "^1.4.0",
+    "d3-path": "^1.0.9",
+    "d3-request": "^1.0.6",
+    "d3-selection": "^1.4.1",
+    "d3-transition": "^1.3.2",
+    "disqus-react": "^1.0.9",
+    "dot-prop": "^5.2.0",
+    "emotion": "^10.0.27",
+    "gatsby-plugin-client-side-redirect": "^1.1.0",
+    "gatsby-plugin-env-variables": "^2.0.0",
+    "js-search": "^2.0.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-social-icons": "^4.1.0",
+    "save": "^2.4.0"
   }
 }
