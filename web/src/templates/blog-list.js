@@ -29,7 +29,6 @@ export const query = graphql`
           }
           title
           _rawExcerpt
-          _rawMembers(resolveReferences: { maxDepth: 5 })
           slug {
             current
           }
@@ -60,7 +59,7 @@ const BlogListTemplate = (props) => {
     <Layout>
       <SEO title="Blog" />
       <Container>
-        <Styled.h1>HODP Blog</Styled.h1>
+        <Styled.h1>Blog</Styled.h1>
         <Styled.p>For the fun stuff.</Styled.p>
         <Spacer height={4} />
         {postNodes && postNodes.length > 0 && (

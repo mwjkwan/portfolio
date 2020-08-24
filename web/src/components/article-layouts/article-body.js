@@ -4,16 +4,14 @@ import ArticleHeader from "./article-header";
 import ArticleSidebar from "./article-sidebar";
 import BlockContent from "../block-content";
 import Container from "../core/container";
-import { DiscussionEmbed } from "disqus-react";
 
 function ArticleBody(props) {
   const {
     _rawExcerpt,
     _rawBody,
     authors,
-    members,
     categories,
-    subjects,
+    technologies,
     publishedAt,
     relatedProjects,
     title,
@@ -23,15 +21,13 @@ function ArticleBody(props) {
   const headerProps = {
     _rawExcerpt,
     title,
-    members,
     authors,
     publishedAt,
   };
   const defaultSidebarProps = {
     authors,
-    members,
     categories,
-    subjects,
+    technologies,
     relatedProjects,
   };
   const disqusConfig = {
@@ -58,7 +54,6 @@ function ArticleBody(props) {
             <br />
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
             <br />
-            <DiscussionEmbed {...disqusConfig} />
           </div>
           <div sx={{ maxWidth: ["100%", 8] }}>
             <ArticleSidebar {...defaultSidebarProps} />

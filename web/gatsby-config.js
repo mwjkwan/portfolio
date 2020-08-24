@@ -5,61 +5,29 @@ const {
 
 module.exports = {
   siteMetadata: {
-    title: `Harvard Open Data Project`,
-    description: `The Harvard College Open Data Project (HODP) is a student-faculty group that aims to increase transparency and solve problems on campus using public Harvard data.`,
-    author: `HODP Team`,
+    title: `Melissa Kwan`,
+    description: `Harvard junior studying computer science and philosophy.`,
+    author: `Melissa Kwan`,
     menuLinks: [
+      {
+        name: `Melissa Kwan`,
+        link: `/index`,
+      },
       {
         name: `Projects`,
         link: `/projects`,
       },
       {
-        name: `Data`,
-        link: `/data`,
+        name: `Philosophy`,
+        link: `/philosophy`,
       },
       {
-        name: `Participate`,
-        link: `/participate`,
-        subMenu: [
-          {
-            name: `Surveys`,
-            link: `/surveys`,
-          },
-          {
-            name: `Predictions Game`,
-            link: `/predictions`,
-          },
-          {
-            name: `HODP Docs`,
-            link: `http://docs.hodp.org/`,
-          },
-          {
-            name: `Join HODP`,
-            link: `/join`,
-          },
-        ],
+        name: `Portfolio`,
+        link: `/portfolio`,
       },
       {
-        name: `Wiki`,
-        link: `http://wiki.hodp.org/wiki/Main_Page`,
-      },
-      {
-        name: `Sponsors`,
-        link: `/sponsors`,
-      },
-      {
-        name: `About`,
-        link: `/about`,
-        subMenu: [
-          {
-            name: `People`,
-            link: `/people`,
-          },
-          {
-            name: `Blog`,
-            link: `/blog`,
-          },
-        ],
+        name: `Contact`,
+        link: `/contact`,
       },
     ],
   },
@@ -82,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ["DISQUS_NAME", "MAPBOX_ACCESS_TOKEN"],
+        allowList: ["DISQUS_NAME"],
       },
     },
     {

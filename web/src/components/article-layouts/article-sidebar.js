@@ -9,14 +9,12 @@ import Section from "../core/section";
 function ArticleSidebar(props) {
   const {
     categories,
-    subjects,
-    authors,
-    members,
+    technologies,
     publishedAt,
     relatedProjects,
   } = props;
   const labels = [
-    ...(subjects ? subjects : []),
+    ...(technologies ? technologies : []),
     ...(categories ? categories : []),
   ];
   const numLabels = labels.length;
@@ -30,16 +28,6 @@ function ArticleSidebar(props) {
               ? distanceInWords(new Date(publishedAt), new Date())
               : format(new Date(publishedAt), "MM-DD-YYYY")}
           </Text>
-        </Section>
-      )}
-      {members && members.length > 0 && (
-        <Section>
-          <RoleList items={members} title="Contributors" />
-        </Section>
-      )}
-      {authors && authors.length > 0 && (
-        <Section>
-          <RoleList items={authors} title="Authors" />
         </Section>
       )}
       {labels && labels.length > 0 && (

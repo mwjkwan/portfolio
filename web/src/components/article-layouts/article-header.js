@@ -14,7 +14,6 @@ function ArticleHeader(props) {
       <br />
       <ArticleByline
         members={members}
-        authors={authors}
         publishedAt={publishedAt}
         showDate
       />

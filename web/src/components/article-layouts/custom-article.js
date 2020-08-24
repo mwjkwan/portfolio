@@ -10,16 +10,14 @@ function CustomArticle(props) {
   const {
     _rawBody,
     authors,
-    members,
     categories,
-    subjects,
+    technologies,
     relatedProjects,
   } = props;
   const defaultSidebarProps = {
     authors,
-    members,
     categories,
-    subjects,
+    technologies,
   };
 
   return (

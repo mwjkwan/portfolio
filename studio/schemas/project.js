@@ -25,6 +25,11 @@ export default {
       type: "mainImage",
     },
     {
+      name: "startDate",
+      title: "Start date",
+      type: "datetime",
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       description:
@@ -52,23 +57,6 @@ export default {
       type: "blockText",
     },
     {
-      name: "facebookUrl",
-      title: "Facebook post link",
-      type: "url",
-    },
-    {
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "projectMember" }],
-    },
-    {
-      name: "dataset",
-      title: "Dataset",
-      type: "array",
-      of: [{ type: "reference", to: { type: "dataset" } }],
-    },
-    {
       name: "body",
       title: "Body",
       type: "blockContent",
@@ -81,10 +69,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "subjects",
-      title: "Subjects",
+      name: "technologies",
+      title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "subject" } }],
+      of: [{ type: "reference", to: { type: "technology" } }],
     },
     {
       name: "relatedProjects",

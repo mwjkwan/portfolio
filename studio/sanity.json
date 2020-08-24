@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "HODP Website",
+    "name": "Portfolio",
     "basePath": "/"
   },
   "useCdn": true,

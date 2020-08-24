@@ -17,7 +17,7 @@ export const query = graphql`
         _id
         title
       }
-      subjects {
+      technologies {
         _id
         title
       }
@@ -59,37 +59,6 @@ export const query = graphql`
       _rawExcerpt
       _rawBody(resolveReferences: { maxDepth: 5 })
       layout
-      members {
-        _key
-        person {
-          image {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-          }
-          name
-          slug {
-            current
-          }
-        }
-        roles
-      }
     }
   }
 `;

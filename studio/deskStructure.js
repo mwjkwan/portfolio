@@ -4,17 +4,14 @@ import { FaFile } from "react-icons/fa";
 
 const hiddenTypes = [
   "category",
-  "companyInfo",
-  "dataset",
+  "personalInfo",
   "page",
-  "person",
   "position",
   "post",
   "project",
   "redirect",
   "siteSettings",
-  "sponsor",
-  "subject",
+  "technology",
 ];
 
 export default () =>
@@ -54,57 +51,21 @@ export default () =>
                 )
                 .icon(FaFile),
               S.listItem()
-                .title("Data")
+                .title("Philosophy")
                 .child(
                   S.editor()
-                    .id("dataPage")
+                    .id("philosophyPage")
                     .schemaType("page")
-                    .documentId("data")
+                    .documentId("philosophy")
                 )
                 .icon(FaFile),
               S.listItem()
-                .title("Participate")
+                .title("Portfolio")
                 .child(
                   S.editor()
-                    .id("participatePage")
+                    .id("portfolioPage")
                     .schemaType("page")
-                    .documentId("participate")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("Predictions")
-                .child(
-                  S.editor()
-                    .id("predictionsPage")
-                    .schemaType("page")
-                    .documentId("predictions")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("Surveys")
-                .child(
-                  S.editor()
-                    .id("surveysPage")
-                    .schemaType("page")
-                    .documentId("surveys")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("Join")
-                .child(
-                  S.editor()
-                    .id("joinPage")
-                    .schemaType("page")
-                    .documentId("join")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("Sponsors")
-                .child(
-                  S.editor()
-                    .id("sponsorsPage")
-                    .schemaType("page")
-                    .documentId("sponsors")
+                    .documentId("portfolio")
                 )
                 .icon(FaFile),
               S.listItem()
@@ -114,15 +75,6 @@ export default () =>
                     .id("blogPage")
                     .schemaType("page")
                     .documentId("blog")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("About")
-                .child(
-                  S.editor()
-                    .id("aboutPage")
-                    .schemaType("page")
-                    .documentId("about")
                 )
                 .icon(FaFile),
               S.listItem()
@@ -137,40 +89,28 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title("People")
-        .schemaType("person")
-        .child(S.documentTypeList("person").title("People")),
-      S.listItem()
-        .title("Positions")
-        .schemaType("position")
-        .child(S.documentTypeList("position").title("Positions")),
+        .title("Work Experiences")
+        .schemaType("experience")
+        .child(S.documentTypeList("experience").title("Work Experiences")),
       S.listItem()
         .title("Categories")
         .schemaType("category")
         .child(S.documentTypeList("category").title("Categories")),
       S.listItem()
-        .title("Subjects")
-        .schemaType("subject")
-        .child(S.documentTypeList("subject").title("Subjects")),
-      S.listItem()
-        .title("Datasets")
-        .schemaType("dataset")
-        .child(S.documentTypeList("dataset").title("Datasets")),
-      S.listItem()
-        .title("Sponsors")
-        .schemaType("sponsor")
-        .child(S.documentTypeList("sponsor").title("Sponsors")),
+        .title("Technologies")
+        .schemaType("technology")
+        .child(S.documentTypeList("technology").title("Technologies")),
       S.listItem()
         .title("Redirects")
         .schemaType("redirect")
         .child(S.documentTypeList("redirect").title("Redirects")),
       S.listItem()
-        .title("Organization Info")
+        .title("Personal Info")
         .child(
           S.editor()
-            .id("companyInfo")
-            .schemaType("companyInfo")
-            .documentId("companyInfo")
+            .id("personalInfo")
+            .schemaType("personalInfo")
+            .documentId("personalInfo")
         )
         .icon(MdInfo),
       S.listItem()

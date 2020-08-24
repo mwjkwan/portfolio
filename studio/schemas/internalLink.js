@@ -12,7 +12,6 @@ export default {
         { type: "post" },
         { type: "page" },
         { type: "project" },
-        { type: "dataset" },
         // other types you may want to link to
       ],
     },

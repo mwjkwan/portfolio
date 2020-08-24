@@ -10,7 +10,7 @@ function ArticleByline({ members, publishedAt, showDate }) {
     person.roles &&
     (person.roles.includes("developer") || person.roles.includes("author"));
 
-  let contributors = [...members].filter(includeInByline);
+  let contributors = members ? [...members].filter(includeInByline) : [];
 
   // filter contributors who aren't developers or authors
   const numContributors = contributors.length;

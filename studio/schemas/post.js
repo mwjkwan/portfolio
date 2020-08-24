@@ -43,12 +43,6 @@ export default {
       type: "blockContent",
     },
     {
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "projectMember" }],
-    },
-    {
       name: "categories",
       title: "Categories",
       type: "array",
@@ -56,15 +50,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "subjects",
-      title: "Subjects",
+      name: "technologies",
+      title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "subject" } }],
-    },
-    {
-      name: "facebookUrl",
-      title: "Facebook post link",
-      type: "url",
+      of: [{ type: "reference", to: { type: "technology" } }],
     },
   ],
   orderings: [

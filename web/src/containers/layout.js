@@ -23,15 +23,15 @@ const query = graphql`
         }
       }
     }
-    companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
+    personalInfo: sanityPersonalInfo(_id: { regex: "/(drafts.|)personalInfo/" }) {
       name
       _rawLogo
       email
       github
+      linkedIn
       facebook
       twitter
       instagram
-      interestForm
       city
     }
   }
@@ -57,9 +57,9 @@ function LayoutContainer(props) {
             return (
               <Layout
                 {...props}
-                logo={data.companyInfo._rawLogo}
+                logo={data.personalInfo._rawLogo}
                 showNav={showNav}
-                companyInfo={data.companyInfo}
+                personalInfo={data.personalInfo}
                 menuLinks={data.menu.siteMetadata.menuLinks}
                 siteTitle={data.site.title}
                 onHideNav={handleHideNav}
