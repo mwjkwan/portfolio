@@ -15,6 +15,7 @@ import figure from "./figure";
 import internalLink from "./internalLink";
 import link from "./link";
 import mainImage from "./mainImage";
+import navigation from "./navigation";
 import page from "./page";
 import post from "./post";
 import preview from "./preview";
@@ -44,6 +45,7 @@ export default createSchema({
     internalLink,
     link,
     mainImage,
+    navigation,
     page,
     preview,
     post,

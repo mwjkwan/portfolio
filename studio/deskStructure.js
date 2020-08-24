@@ -1,9 +1,10 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdInfo, MdSettings } from "react-icons/md";
+import { MdInfo, MdSettings, MdStyle } from "react-icons/md";
 import { FaFile } from "react-icons/fa";
 
 const hiddenTypes = [
   "category",
+  "navigation",
   "personalInfo",
   "page",
   "position",
@@ -113,6 +114,15 @@ export default () =>
             .documentId("personalInfo")
         )
         .icon(MdInfo),
+      S.listItem()
+        .title("Navigation")
+        .child(
+          S.editor()
+            .id("navigation")
+            .schemaType("navigation")
+            .documentId("navigation")
+        )
+        .icon(MdStyle),
       S.listItem()
         .title("Site Settings")
         .child(
