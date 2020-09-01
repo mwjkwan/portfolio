@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ["DISQUS_NAME"],
+        allowList: ["GOOGLE_ANALYTICS_TRACKING_ID", "DISQUS_NAME"],
       },
     },
     {
