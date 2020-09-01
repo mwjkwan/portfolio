@@ -13,8 +13,7 @@ export default {
     },
   ],
   preview: {
-    select: {
-    },
+    select: {},
     prepare({ title = "Navigation" }) {
       return {
         title,

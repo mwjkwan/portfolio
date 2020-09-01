@@ -57,11 +57,7 @@ class MobileHeader extends React.Component {
           <Flex sx={{ mt: [4] }}>
             <Box sx={{ flex: "1 5 auto" }}>
               <Link to="/">
-                <img
-                  src={logoSrc}
-                  sx={{ maxHeight: "30px" }}
-                  alt={logo.alt}
-                />
+                <img src={logoSrc} sx={{ maxHeight: "30px" }} alt={logo.alt} />
               </Link>
             </Box>
             <Box
@@ -135,20 +131,21 @@ class MobileHeader extends React.Component {
           sx={{ transition: "height 500ms" }}
           isOpened={this.state[slug] === true}
         >
-          {link.subMenu && link.subMenu.map((subLink) => (
-            <Text
-              onClick={() => this.handleClick()}
-              sx={{
-                color: "text",
-                fontSize: 2,
-                mb: 2,
-                width: "fit-content !important",
-                ":hover": { cursor: "pointer !important" },
-              }}
-            >
-              <MenuLink {...subLink}>{subLink.name}</MenuLink>
-            </Text>
-          ))}
+          {link.subMenu &&
+            link.subMenu.map((subLink) => (
+              <Text
+                onClick={() => this.handleClick()}
+                sx={{
+                  color: "text",
+                  fontSize: 2,
+                  mb: 2,
+                  width: "fit-content !important",
+                  ":hover": { cursor: "pointer !important" },
+                }}
+              >
+                <MenuLink {...subLink}>{subLink.name}</MenuLink>
+              </Text>
+            ))}
         </Collapse>
       </>
     );

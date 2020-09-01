@@ -41,7 +41,7 @@ const PortfolioPage = (props) => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-          <BlockContent blocks={page._rawBody || []} />
+        <BlockContent blocks={page._rawBody || []} />
       </Container>
     </Layout>
   );

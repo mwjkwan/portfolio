@@ -15,10 +15,7 @@ function ProjectPreviewGrid(props) {
           )}
         </h4>
       )}
-      <Grid
-        gap={props.space || 4}
-        columns={props.columns || [1, 2, 3]}
-      >
+      <Grid gap={props.space || 4} columns={props.columns || [1, 2, 3]}>
         {props.nodes &&
           props.nodes.map((node, key) => (
             <ArticlePreview

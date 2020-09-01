@@ -12,11 +12,7 @@ function ArticleHeader(props) {
       {title && <Styled.h1 sx={{ fontSize: [4, 4, 5] }}>{title}</Styled.h1>}
       {_rawExcerpt && <BlockContent blocks={_rawExcerpt || []} />}
       <br />
-      <ArticleByline
-        members={members}
-        publishedAt={publishedAt}
-        showDate
-      />
+      <ArticleByline members={members} publishedAt={publishedAt} showDate />
     </div>
   );
 }

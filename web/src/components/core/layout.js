@@ -21,11 +21,11 @@ const navLinkStyles = {
     color: "deep",
     cursor: "pointer",
   },
-}
+};
 
-const SocialIcons = ({personalInfo}) => (
+const SocialIcons = ({ personalInfo }) => (
   <>
-    {(personalInfo.socialMedia || []).map((link, i) =>
+    {(personalInfo.socialMedia || []).map((link, i) => (
       <div>
         <SocialIcon
           key={`social-${i}`}
@@ -35,29 +35,21 @@ const SocialIcons = ({personalInfo}) => (
         />
         <br />
       </div>
-    )}
+    ))}
   </>
-)
+);
 
-const Layout = ({
-  children,
-  personalInfo,
-  logo,
-  menuLinks,
-  siteTitle,
-}) => (
+const Layout = ({ children, personalInfo, logo, menuLinks, siteTitle }) => (
   <>
     <div sx={{ display: ["initial", "none", "none", "none"] }}>
-      <MobileHeader
-        siteTitle={siteTitle}
-        logo={logo}
-        menuLinks={menuLinks}
-      />
+      <MobileHeader siteTitle={siteTitle} logo={logo} menuLinks={menuLinks} />
     </div>
     <Grid gap={[4, 4, 5, 6]} columns={[1, "1fr 5fr"]}>
-      <div sx={{ display: ["none", "initial", "initial", "initial"], mt: "150px" }}>
-        <div sx={{position: "sticky", top: "150px", textAlign: "right" }}>
-          {menuLinks.map(x =>
+      <div
+        sx={{ display: ["none", "initial", "initial", "initial"], mt: "150px" }}
+      >
+        <div sx={{ position: "sticky", top: "150px", textAlign: "right" }}>
+          {menuLinks.map((x) => (
             <div sx={{ mb: 2 }}>
               <Link
                 activeClassName="active"
@@ -70,14 +62,12 @@ const Layout = ({
                 {x.name}
               </Link>
             </div>
-          )}
+          ))}
           <Spacer height={5} />
           <SocialIcons personalInfo={personalInfo} />
         </div>
       </div>
-      <div sx={{ minHeight: "70vh", mt: 5, mb: 5 }}>
-        {children}
-      </div>
+      <div sx={{ minHeight: "70vh", mt: 5, mb: 5 }}>{children}</div>
     </Grid>
     <footer sx={{ textAlign: "center", m: 4 }}>
       Designed and built by Melissa Kwan.

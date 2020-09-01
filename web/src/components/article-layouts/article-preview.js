@@ -16,9 +16,12 @@ function PreviewText(props) {
       </Link>
       {props._rawExcerpt && <BlockText blocks={props._rawExcerpt} />}
       <Text fontFamily="mono">
-        {props.technologies && props.technologies.map((item, i) =>
-          <Badge variant="outline" mr={2}>{item.title}</Badge>
-        )}
+        {props.technologies &&
+          props.technologies.map((item, i) => (
+            <Badge variant="outline" mr={2}>
+              {item.title}
+            </Badge>
+          ))}
       </Text>
       {props.children}
     </div>
@@ -97,7 +100,8 @@ function VerticalArticlePreview(props) {
 }
 
 function ArticlePreview(props) {
-  const newLink = props.type === "blog" ? `/blog/${props.link}` : `/projects/${props.link}`;
+  const newLink =
+    props.type === "blog" ? `/blog/${props.link}` : `/projects/${props.link}`;
   // Collapse large horizontal previews to vertical
   if (props.horizontal && props.size === "large") {
     return (

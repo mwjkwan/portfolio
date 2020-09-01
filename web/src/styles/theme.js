@@ -246,13 +246,13 @@ export default {
   },
   badges: {
     primary: {
-      color: 'background',
-      bg: 'primary',
+      color: "background",
+      bg: "primary",
     },
     outline: {
-      color: 'deep',
-      bg: 'transparent',
-      boxShadow: 'inset 0 0 0 1px',
+      color: "deep",
+      bg: "transparent",
+      boxShadow: "inset 0 0 0 1px",
     },
   },
 };

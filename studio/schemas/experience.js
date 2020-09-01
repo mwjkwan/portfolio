@@ -46,8 +46,7 @@ export default {
     {
       name: "description",
       title: "Description",
-      description:
-        'Action + impact, with metrics.',
+      description: "Action + impact, with metrics.",
       type: "blockContent",
     },
     {

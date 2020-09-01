@@ -7,12 +7,7 @@ import Section from "../core/section";
 
 // Creates a sidebar with all available props
 function ArticleSidebar(props) {
-  const {
-    categories,
-    technologies,
-    publishedAt,
-    relatedProjects,
-  } = props;
+  const { categories, technologies, publishedAt, relatedProjects } = props;
   const labels = [
     ...(technologies ? technologies : []),
     ...(categories ? categories : []),

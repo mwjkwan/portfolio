@@ -12,6 +12,6 @@ export default {
       title: "Embed URL",
       name: "url",
       type: "url",
-    }
+    },
   ],
 };

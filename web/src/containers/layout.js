@@ -14,7 +14,9 @@ const query = graphql`
     navigation: sanityNavigation {
       _rawMetadata
     }
-    personalInfo: sanityPersonalInfo(_id: { regex: "/(drafts.|)personalInfo/" }) {
+    personalInfo: sanityPersonalInfo(
+      _id: { regex: "/(drafts.|)personalInfo/" }
+    ) {
       name
       _rawLogo
       _rawProfile

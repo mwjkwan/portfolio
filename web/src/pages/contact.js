@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, Grid } from "theme-ui";
 import { graphql } from "gatsby";
 import BlockContent from "../components/block-content";
 import Container from "../components/core/container";
@@ -42,7 +42,12 @@ const ContactPage = (props) => {
       <SEO title={page.title} />
       <Container>
         <Styled.h1>Get in touch</Styled.h1>
-        <BlockContent blocks={page._rawBody || []} />
+        <Grid gap={5} columns={[1, "1fr 2fr", "1fr 2fr"]}>
+          <BlockContent blocks={(page._rawBody && page._rawBody[0]) || []} />
+          <BlockContent
+            blocks={(page._rawBody && page._rawBody.slice(1)) || []}
+          />
+        </Grid>
       </Container>
     </Layout>
   );

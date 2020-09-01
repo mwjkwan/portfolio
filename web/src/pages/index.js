@@ -27,13 +27,15 @@ export const query = graphql`
       description
       keywords
     }
-    personalInfo: sanityPersonalInfo(_id: { regex: "/(drafts.|)personalInfo/" }) {
+    personalInfo: sanityPersonalInfo(
+      _id: { regex: "/(drafts.|)personalInfo/" }
+    ) {
       name
       _rawLogo
       _rawProfile
       _rawBio
     }
-    experience: allSanityExperience(sort: {fields: endDate, order: DESC}) {
+    experience: allSanityExperience(sort: { fields: endDate, order: DESC }) {
       edges {
         node {
           name
@@ -113,7 +115,7 @@ const IndexPage = (props) => {
     marginLeft: "50px",
     maxWidth: "80%",
     boxShadow: "-30px 30px 0px #CCCEC4",
-  }
+  };
 
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
@@ -146,15 +148,21 @@ const IndexPage = (props) => {
         <Grid gap={4} columns={[1, 1, "3fr 5fr"]}>
           {personalInfo._rawProfile && (
             <Image
-              src={imageUrlFor(buildImageObj(personalInfo._rawProfile)).width(600).url()}
+              src={imageUrlFor(buildImageObj(personalInfo._rawProfile))
+                .width(600)
+                .url()}
               alt={"Melissa Kwan profile picture"}
               style={profileStyle}
             />
           )}
-          <div style={{ display: "flex", alignItems: "center", maxWidth: "600px" }}>
+          <div
+            style={{ display: "flex", alignItems: "center", maxWidth: "600px" }}
+          >
             <div>
               Hi, my name is
-              <Styled.h1 style={{ marginTop: "10px" }}>{personalInfo.name}.</Styled.h1>
+              <Styled.h1 style={{ marginTop: "10px" }}>
+                {personalInfo.name}.
+              </Styled.h1>
               <BlockContent blocks={personalInfo._rawBio || []} />
             </div>
           </div>
