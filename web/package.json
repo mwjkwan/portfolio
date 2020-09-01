@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "hodp-website-frontend",
+  "name": "portfolio",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Melissa Kwan",
   "engines": {
     "node": "10.x"
   },
