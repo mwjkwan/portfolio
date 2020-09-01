@@ -113,7 +113,8 @@ const IndexPage = (props) => {
 
   const profileStyle = {
     marginLeft: "50px",
-    maxWidth: "80%",
+    marginBottom: "30px",
+    maxWidth: "75%",
     boxShadow: "-30px 30px 0px #CCCEC4",
   };
 
@@ -156,7 +157,7 @@ const IndexPage = (props) => {
             />
           )}
           <div
-            style={{ display: "flex", alignItems: "center", maxWidth: "600px" }}
+            style={{ display: "flex", alignItems: "center" }}
           >
             <div>
               Hi, my name is

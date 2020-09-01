@@ -87,7 +87,7 @@ li {
   margin-bottom: 0.5em;
 }
 
-.small p {
+.small p, .small li {
   font-size: 16px !important;
 }
 
