@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaLink, FaUpload } from "react-icons/fa";
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -74,6 +74,9 @@ export default {
             type: "object",
             title: "Internal link",
             description: "Reference to another page (optional)",
+            blockEditor: {
+              icon: FaLink,
+            },
             fields: [
               {
                 name: "reference",
@@ -83,9 +86,23 @@ export default {
                   { type: "post" },
                   { type: "page" },
                   { type: "project" },
-                  { type: "dataset" },
                   // other types you may want to link to
                 ],
+              },
+            ],
+          },
+          {
+            name: "attachment",
+            type: "object",
+            title: "Attachment",
+            blockEditor: {
+              icon: FaUpload,
+            },
+            fields: [
+              {
+                name: "file",
+                type: "file",
+                title: "File upload",
               },
             ],
           },
@@ -106,6 +123,9 @@ export default {
     },
     {
       type: "preview",
+    },
+    {
+      type: "video",
     },
   ],
 };

@@ -19,6 +19,22 @@ export default {
       type: "image",
     },
     {
+      name: "profile",
+      title: "Profile picture",
+      type: "image",
+    },
+    {
+      name: "bio",
+      title: "Bio",
+      type: "blockContent",
+    },
+    {
+      type: "array",
+      name: "socialMedia",
+      title: "Social Media Links",
+      of: [{ title: "URL", type: "url" }],
+    },
+    {
       name: "email",
       title: "Email",
       type: "email",
