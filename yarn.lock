@@ -637,7 +637,7 @@
 
 "@lerna/project@3.21.0":
   version "3.21.0"
-  resolved "https://registry.npmjs.org/@lerna/project/-/project-3.21.0.tgz#5d784d2d10c561a00f20320bcdb040997c10502d"
+  resolved "https://registry.npmjs.org/@lerna/projects/-/project-3.21.0.tgz#5d784d2d10c561a00f20320bcdb040997c10502d"
   dependencies:
     "@lerna/package" "3.16.0"
     "@lerna/validation-error" "3.13.0"

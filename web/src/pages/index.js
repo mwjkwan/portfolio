@@ -7,6 +7,7 @@ import { imageUrlFor } from "../lib/image-url";
 import BlockContent from "../components/block-content";
 import Container from "../components/core/container";
 import GraphQLErrorList from "../components/core/graphql-error-list";
+import Experience from "../components/experience";
 import SEO from "../components/core/seo";
 import Section from "../components/core/section";
 import Layout from "../containers/layout";
@@ -32,8 +33,21 @@ export const query = graphql`
       _rawProfile
       _rawBio
     }
+    experience: allSanityExperience(sort: {fields: endDate, order: DESC}) {
+      edges {
+        node {
+          name
+          url
+          companyTagline
+          position
+          _rawDescription
+          startDate
+          endDate
+        }
+      }
+    }
     projects: allSanityProject(
-      limit: 10
+      limit: 3
       sort: { fields: [publishedAt], order: DESC }
     ) {
       edges {
@@ -64,6 +78,9 @@ export const query = graphql`
           }
           title
           _rawExcerpt
+          technologies {
+            title
+          }
           slug {
             current
           }
@@ -87,6 +104,16 @@ const IndexPage = (props) => {
   const site = (data || {}).site;
 
   const personalInfo = (data || {}).personalInfo;
+
+  const experienceNodes = (data || {}).experience
+    ? mapEdgesToNodes(data.experience)
+    : [];
+
+  const profileStyle = {
+    marginLeft: "50px",
+    maxWidth: "80%",
+    boxShadow: "-30px 30px 0px #CCCEC4",
+  }
 
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
@@ -116,49 +143,39 @@ const IndexPage = (props) => {
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         <br />
-        <Grid gap={6} columns={[1, 1, "2fr 5fr"]}>
+        <Grid gap={4} columns={[1, 1, "3fr 5fr"]}>
           {personalInfo._rawProfile && (
             <Image
               src={imageUrlFor(buildImageObj(personalInfo._rawProfile)).width(600).url()}
               alt={"Melissa Kwan profile picture"}
-              style={{
-                marginLeft: "50px",
-                boxShadow: "-50px 50px 0px #DECCCC",
-              }}
+              style={profileStyle}
             />
           )}
-          <div style={{ verticalAlign: "middle" }}>
-            Hi, my name is
-            <Styled.h1 style={{ marginTop: "10px" }}>{personalInfo.name}.</Styled.h1>
-            <BlockContent blocks={personalInfo._rawBio || []} />
+          <div style={{ display: "flex", alignItems: "center", maxWidth: "600px" }}>
+            <div>
+              Hi, my name is
+              <Styled.h1 style={{ marginTop: "10px" }}>{personalInfo.name}.</Styled.h1>
+              <BlockContent blocks={personalInfo._rawBio || []} />
+            </div>
           </div>
         </Grid>
-        <br />
-        <Grid gap={6} columns={[1, 1, "3fr 1fr"]}>
+        <Spacer height={6} />
+        <Container>
+          <Styled.h2 style={{ marginTop: "10px" }}>Where I've worked</Styled.h2>
+          <Experience nodes={experienceNodes} />
+        </Container>
+        <Spacer height={6} />
+        <Container maxWidth={"800px"}>
+          <Styled.h2 style={{ marginTop: "10px" }}>Featured projects</Styled.h2>
           {projectNodes && (
             <PreviewGrid
               nodes={projectNodes}
-              featured
-              featuredHorizontal
-              container
-              browseMoreHref="/projects/2"
+              horizontal
+              columns={1}
+              browseMoreHref="/projects"
             />
           )}
-          <div
-            className="small preview"
-            style={{
-              position: "-webkit-sticky",
-              position: "sticky",
-              top: 0,
-            }}
-          >
-            <BlockContent blocks={page._rawBody || []} />
-            <Spacer height={5} />
-            <Section header="Quick Links">
-              <BlockContent blocks={page._rawBodySecondary || []} />
-            </Section>
-          </div>
-        </Grid>
+        </Container>
       </Container>
     </Layout>
   );

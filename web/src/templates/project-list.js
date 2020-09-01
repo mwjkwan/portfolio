@@ -45,6 +45,9 @@ export const query = graphql`
             _id
             title
           }
+          technologies {
+            title
+          }
         }
       }
     }
@@ -119,12 +122,12 @@ const ProjectListTemplate = (props) => {
                 <div>
                   {
                     <Styled.h1>
-                      {firstPage ? "Recent projects" : "Past projects"}
+                      {firstPage ? "Projects" : "Past projects"}
                     </Styled.h1>
                   }
                   <ProjectList showDivider nodes={projectNodes} />
                 </div>
-                <Section header="Featured" showDivider={false}>
+                <Section showDivider={false}>
                   <br />
                   <BlockContent blocks={page._rawBodySecondary || []} />
                 </Section>

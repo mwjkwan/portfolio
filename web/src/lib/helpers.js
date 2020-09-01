@@ -27,7 +27,7 @@ export function resolveInternalLink(link) {
   switch (type) {
     // TODO: Update for dataset
     case "SanityProject":
-      return `/project/${slug.current}`;
+      return `/projects/${slug.current}`;
 
     case "SanityPost":
       return getBlogUrl(publishedAt, slug.current);

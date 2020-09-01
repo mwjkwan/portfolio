@@ -60,7 +60,6 @@ const BlogListTemplate = (props) => {
       <SEO title="Blog" />
       <Container>
         <Styled.h1>Blog</Styled.h1>
-        <Styled.p>For the fun stuff.</Styled.p>
         <Spacer height={4} />
         {postNodes && postNodes.length > 0 && (
           <ProjectPreviewGrid nodes={postNodes} type="blog" />

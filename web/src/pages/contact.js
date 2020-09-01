@@ -41,7 +41,7 @@ const ContactPage = (props) => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-        <BannerHeader title={page.title} />
+        <Styled.h1>Get in touch</Styled.h1>
         <BlockContent blocks={page._rawBody || []} />
       </Container>
     </Layout>

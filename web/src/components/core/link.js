@@ -27,7 +27,7 @@ export default (props) => {
   const sx = props.variant === "highlighted" ? highlightedSx : defaultSx;
 
   if (props.to && props.to[0] === "/") {
-    return <Link className={`${props.variant}-link`} {...props} sx={sx} />;
+    return <Link activeStyle={{ color: "#C63F3F" }} className={`${props.variant}-link`} {...props} sx={sx} />;
   }
   return (
     <a className={`${props.variant}-link`} {...props} sx={sx} target="_blank" />

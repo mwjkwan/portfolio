@@ -44,7 +44,7 @@ function CustomArticle(props) {
                     title={project.title}
                     mainImage={project._rawMainImage}
                     image={project._rawMainImage}
-                    link={`/project/${project.slug.current}`}
+                    link={`/projects/${project.slug.current}`}
                     horizontal={[false, true, true]}
                     headerAs={"medium"}
                     columns={["1fr 3.5fr"]}

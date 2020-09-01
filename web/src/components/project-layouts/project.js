@@ -12,9 +12,9 @@ function Project(props) {
     case "fullImage":
       return <FullImageArticle {...props} />;
     case "sideHeader":
-      return <SideHeaderArticle {...props} />;
-    default:
       return <StackHeaderArticle {...props} />;
+    default:
+      return <SideHeaderArticle {...props} />;
   }
 }
 

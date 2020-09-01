@@ -13,6 +13,16 @@ const socialIconStyles = {
   marginBottom: "10px",
 };
 
+const navLinkStyles = {
+  fontSize: [3, 2, 4, 4],
+  color: "#D3CFCC",
+  fontWeight: "medium",
+  "&:hover": {
+    color: "deep",
+    cursor: "pointer",
+  },
+}
+
 const SocialIcons = ({personalInfo}) => (
   <>
     {(personalInfo.socialMedia || []).map((link, i) =>
@@ -46,10 +56,17 @@ const Layout = ({
     </div>
     <Grid gap={[4, 4, 5, 6]} columns={[1, "1fr 5fr"]}>
       <div sx={{ display: ["none", "initial", "initial", "initial"], mt: "150px" }}>
-        <div sx={{position: "sticky", top: "150px", textAlign: "right", fontSize: [3, 2, 4, 4], color: "#D3CFCC", fontWeight: "medium",}}>
+        <div sx={{position: "sticky", top: "150px", textAlign: "right" }}>
           {menuLinks.map(x =>
             <div sx={{ mb: 2 }}>
-              <Link to={x.link} href={x.link} variant="default">
+              <Link
+                activeClassName="active"
+                partiallyActive={x.link !== "/"}
+                sx={navLinkStyles}
+                to={x.link}
+                href={x.link}
+                variant="default"
+              >
                 {x.name}
               </Link>
             </div>
@@ -62,6 +79,9 @@ const Layout = ({
         {children}
       </div>
     </Grid>
+    <footer sx={{ textAlign: "center", m: 4 }}>
+      Designed and built by Melissa Kwan.
+    </footer>
   </>
 );
 

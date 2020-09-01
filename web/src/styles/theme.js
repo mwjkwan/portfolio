@@ -47,7 +47,7 @@ export default {
     caps: {
       textTransform: "uppercase",
       fontSize: "16px",
-      letterSpacing: "0.08em",
+      letterSpacing: "0.03em",
       fontWeight: "medium",
     },
     monospace: {
@@ -242,6 +242,17 @@ export default {
     },
     slider: {
       bg: "muted",
+    },
+  },
+  badges: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+    },
+    outline: {
+      color: 'deep',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
     },
   },
 };

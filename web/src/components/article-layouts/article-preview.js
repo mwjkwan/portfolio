@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Styled, Text } from "theme-ui";
+import { jsx, Badge, Grid, Styled, Text } from "theme-ui";
 import Link from "../core/link";
 import { buildImageObj, formatDate } from "../../lib/helpers";
 import { imageUrlFor } from "../../lib/image-url";
@@ -15,7 +15,11 @@ function PreviewText(props) {
         </Text>
       </Link>
       {props._rawExcerpt && <BlockText blocks={props._rawExcerpt} />}
-      {props._rawMembers && <ArticleByline members={props._rawMembers} />}
+      <Text fontFamily="mono">
+        {props.technologies && props.technologies.map((item, i) =>
+          <Badge variant="outline" mr={2}>{item.title}</Badge>
+        )}
+      </Text>
       {props.children}
     </div>
   );
@@ -30,7 +34,7 @@ function HorizontalArticlePreview(props) {
   return (
     <div
       className="small preview"
-      sx={{ bg: props.container ? "container" : "#FFFFFF" }}
+      sx={{ bg: props.container ? "container" : "none" }}
     >
       <Grid gap={props.gap || 3} columns={props.columns || ["1fr 2fr"]}>
         <Link to={props.newLink}>
@@ -93,7 +97,7 @@ function VerticalArticlePreview(props) {
 }
 
 function ArticlePreview(props) {
-  const newLink = props.type === "blog" ? `/blog/${props.link}` : `/project/${props.link}`;
+  const newLink = props.type === "blog" ? `/blog/${props.link}` : `/projects/${props.link}`;
   // Collapse large horizontal previews to vertical
   if (props.horizontal && props.size === "large") {
     return (
