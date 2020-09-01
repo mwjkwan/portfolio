@@ -16,8 +16,8 @@ function ProjectPreviewGrid(props) {
         </h4>
       )}
       <Grid
-        gap={props.space ? props.space : 4}
-        columns={props.columns ? props.columns : [1, 2, 3]}
+        gap={props.space || 4}
+        columns={props.columns || [1, 2, 3]}
       >
         {props.nodes &&
           props.nodes.map((node, key) => (
@@ -28,6 +28,7 @@ function ProjectPreviewGrid(props) {
               size={props.size}
               {...node}
               link={node.slug.current}
+              type={props.type}
             />
           ))}
       </Grid>

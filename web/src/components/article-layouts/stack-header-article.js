@@ -10,8 +10,8 @@ function StackHeaderArticle(props) {
 
   return (
     <div>
-      <div sx={{ maxWidth: "1156px", margin: "0 auto", mt: ["1em", "3em"] }}>
-        <div sx={{ margin: [4, 4, 0], maxWidth: "95vw" }}>
+      <div sx={{ maxWidth: "1156px", mt: ["1em", "3em"] }}>
+        <div sx={{ maxWidth: "95vw" }}>
           <ArticleHeader {...props} />
         </div>
         <br />

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid } from "theme-ui";
+import { jsx, Grid, Styled } from "theme-ui";
 import { graphql } from "gatsby";
 import BlockContent from "../components/block-content";
 import Container from "../components/core/container";
@@ -41,7 +41,8 @@ const PhilosophyPage = (props) => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-        <Grid gap={5} columns={[1, 1, "1fr 2fr"]}>
+        <Styled.h1>{page.title}</Styled.h1>
+        <Grid gap={5} columns={[1, "1fr 2fr", "1fr 3fr"]}>
           <BlockContent blocks={(page._rawBody && page._rawBody[0]) || []} />
           <BlockContent
             blocks={(page._rawBody && page._rawBody.slice(1)) || []}

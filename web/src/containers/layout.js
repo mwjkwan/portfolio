@@ -11,21 +11,15 @@ const query = graphql`
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
     }
-    menu: site {
-      siteMetadata {
-        menuLinks {
-          link
-          name
-          subMenu {
-            link
-            name
-          }
-        }
-      }
+    navigation: sanityNavigation {
+      _rawMetadata
     }
     personalInfo: sanityPersonalInfo(_id: { regex: "/(drafts.|)personalInfo/" }) {
       name
       _rawLogo
+      _rawProfile
+      _rawBio
+      socialMedia
       email
       github
       linkedIn
@@ -60,7 +54,7 @@ function LayoutContainer(props) {
                 logo={data.personalInfo._rawLogo}
                 showNav={showNav}
                 personalInfo={data.personalInfo}
-                menuLinks={data.menu.siteMetadata.menuLinks}
+                menuLinks={data.navigation._rawMetadata.menuLinks}
                 siteTitle={data.site.title}
                 onHideNav={handleHideNav}
                 onShowNav={handleShowNav}

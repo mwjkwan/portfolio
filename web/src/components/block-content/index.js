@@ -6,7 +6,8 @@ import Figure from "./figure";
 import EmbeddedComponent from "./embedded-component";
 import Slideshow from "./slideshow";
 import Preview from "./preview";
-import { getBlogUrl, resolveInternalLink } from "../../lib/helpers";
+import Video from "./video";
+import { resolveAttachmentLink, resolveInternalLink } from "../../lib/helpers";
 
 const serializers = {
   types: {
@@ -55,11 +56,18 @@ const serializers = {
     preview(props) {
       return <Preview {...props.node} />;
     },
+    video(props) {
+      return <Video {...props.node} />;
+    },
   },
   marks: {
     internalLink: ({ mark, children }) => {
-      let fullSlug = resolveInternalLink(mark);
+      const fullSlug = resolveInternalLink(mark);
       return <Link to={fullSlug}>{children}</Link>;
+    },
+    attachment: ({ mark, children }) => {
+      const fullSlug = resolveAttachmentLink(mark);
+      return <Link href={fullSlug}>{children}</Link>;
     },
   },
 };

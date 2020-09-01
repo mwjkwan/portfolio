@@ -75,7 +75,7 @@ const BlogPostTemplate = (props) => {
         </Container>
       )}
 
-      {post && <Project {...post} />}
+      {post && <Project layout={"sideHeader"} {...post} />}
     </Layout>
   );
 };

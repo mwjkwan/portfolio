@@ -12,7 +12,7 @@ const Container = ({ maxWidth, margin, align, children }) => {
       <div
         sx={{
           maxWidth: ["100%", maxWidth ? maxWidth : "1280px"],
-          margin: align !== "left" && "0 auto",
+          margin: align === "center" && "0 auto",
         }}
       >
         {children}

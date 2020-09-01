@@ -1,7 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Grid } from "theme-ui";
+import { Grid, Image, Styled, Text } from "theme-ui";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
 import BlockContent from "../components/block-content";
 import Container from "../components/core/container";
 import GraphQLErrorList from "../components/core/graphql-error-list";
@@ -23,6 +25,12 @@ export const query = graphql`
       title
       description
       keywords
+    }
+    personalInfo: sanityPersonalInfo(_id: { regex: "/(drafts.|)personalInfo/" }) {
+      name
+      _rawLogo
+      _rawProfile
+      _rawBio
     }
     projects: allSanityProject(
       limit: 10
@@ -78,6 +86,8 @@ const IndexPage = (props) => {
 
   const site = (data || {}).site;
 
+  const personalInfo = (data || {}).personalInfo;
+
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : [];
@@ -105,6 +115,24 @@ const IndexPage = (props) => {
       />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
+        <br />
+        <Grid gap={6} columns={[1, 1, "2fr 5fr"]}>
+          {personalInfo._rawProfile && (
+            <Image
+              src={imageUrlFor(buildImageObj(personalInfo._rawProfile)).width(600).url()}
+              alt={"Melissa Kwan profile picture"}
+              style={{
+                marginLeft: "50px",
+                boxShadow: "-50px 50px 0px #DECCCC",
+              }}
+            />
+          )}
+          <div style={{ verticalAlign: "middle" }}>
+            Hi, my name is
+            <Styled.h1 style={{ marginTop: "10px" }}>{personalInfo.name}.</Styled.h1>
+            <BlockContent blocks={personalInfo._rawBio || []} />
+          </div>
+        </Grid>
         <br />
         <Grid gap={6} columns={[1, 1, "3fr 1fr"]}>
           {projectNodes && (

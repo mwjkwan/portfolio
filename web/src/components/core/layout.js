@@ -2,103 +2,66 @@
 import React, { useState } from "react";
 import { jsx, Button, Input, Grid } from "theme-ui";
 import { SocialIcon } from "react-social-icons";
-import Header from "./header";
+import MobileHeader from "./mobile-header";
+import Spacer from "./spacer";
 import Container from "./container";
 import Link from "./link";
 
 const socialIconStyles = {
   height: 35,
   width: 35,
-  marginRight: "0.7em",
+  marginBottom: "10px",
 };
+
+const SocialIcons = ({personalInfo}) => (
+  <>
+    {(personalInfo.socialMedia || []).map((link, i) =>
+      <div>
+        <SocialIcon
+          key={`social-${i}`}
+          url={link}
+          fgColor="#FFFFFF"
+          style={socialIconStyles}
+        />
+        <br />
+      </div>
+    )}
+  </>
+)
 
 const Layout = ({
   children,
   personalInfo,
   logo,
   menuLinks,
-  onHideNav,
-  onShowNav,
-  showNav,
   siteTitle,
 }) => (
   <>
-    <Header
-      siteTitle={siteTitle}
-      logo={logo}
-      menuLinks={menuLinks}
-      onHideNav={onHideNav}
-      onShowNav={onShowNav}
-      showNav={showNav}
-    />
-    <div className="pageContent" sx={{ minHeight: "70vh", mb: 5 }}>
-      {children}
+    <div sx={{ display: ["initial", "none", "none", "none"] }}>
+      <MobileHeader
+        siteTitle={siteTitle}
+        logo={logo}
+        menuLinks={menuLinks}
+      />
     </div>
-    <footer>
-      <div sx={{ bg: "charcoal", pt: 3, pb: 3 }}>
-        <Container>
-          <SocialIcon
-            url={personalInfo.github}
-            fgColor="#FFFFFF"
-            style={socialIconStyles}
-          />
-          <SocialIcon
-            url={personalInfo.linkedIn}
-            fgColor="#FFFFFF"
-            style={socialIconStyles}
-          />
-          <SocialIcon
-            url={`mailto:${personalInfo.email}`}
-            fgColor="#FFFFFF"
-            style={socialIconStyles}
-          />
-        </Container>
-      </div>
-      <div sx={{ bg: "container", fontSize: 1, pt: 4, pb: 4 }}>
-        <Container>
-          <Grid columns={[1, "1fr 1fr", "2fr 1fr"]}>
-            <div>
-              {personalInfo && (
-                <div>
-                  <b>{personalInfo.name}</b>
-                </div>
-              )}
-              <div>
-                © 2016-{new Date().getFullYear()}, Built with{" "}
-                <Link href="https://www.sanity.io" variant="highlighted">
-                  <b>Sanity</b>
-                </Link>{" "}
-                &amp;
-                {` `}
-                <Link href="https://www.gatsbyjs.org" variant="highlighted">
-                  <b>Gatsby</b>
-                </Link>
-              </div>
-              <br />
-              <div>
-                <b>Resources</b>
-                <br />
-                <Link href="https://docs.hodp.org">Docs</Link>
-                <br />
-                <Link href="http://wiki.hodp.org/wiki/Main_Page">Harvard Wiki</Link>
-                <br />
-                <br />
-                {`The code for this website is `}
-                <Link
-                  href="https://github.com/HarvardOpenData"
-                  variant="highlighted"
-                >
-                  <b>open source.</b>
-                </Link>
-              </div>
+    <Grid gap={[4, 4, 5, 6]} columns={[1, "1fr 5fr"]}>
+      <div sx={{ display: ["none", "initial", "initial", "initial"], mt: "150px" }}>
+        <div sx={{position: "sticky", top: "150px", textAlign: "right", fontSize: [3, 2, 4, 4], color: "#D3CFCC", fontWeight: "medium",}}>
+          {menuLinks.map(x =>
+            <div sx={{ mb: 2 }}>
+              <Link to={x.link} href={x.link} variant="default">
+                {x.name}
+              </Link>
             </div>
-            <div>
-              HI
-            </div>
-          </Grid>
-        </Container>
+          )}
+          <Spacer height={5} />
+          <SocialIcons personalInfo={personalInfo} />
+        </div>
       </div>
-    </footer>
+      <div sx={{ minHeight: "70vh", mt: 5, mb: 5 }}>
+        {children}
+      </div>
+    </Grid>
   </>
 );
 

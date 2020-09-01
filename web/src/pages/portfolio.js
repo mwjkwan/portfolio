@@ -41,12 +41,7 @@ const PortfolioPage = (props) => {
     <Layout>
       <SEO title={page.title} />
       <Container>
-        <Grid gap={5} columns={[1, 1, "2fr 1fr"]}>
-          <BlockContent
-            blocks={(page._rawBody && page._rawBody.slice(1)) || []}
-          />
-          <BlockContent blocks={(page._rawBody && page._rawBody[0]) || []} />
-        </Grid>
+          <BlockContent blocks={page._rawBody || []} />
       </Container>
     </Layout>
   );

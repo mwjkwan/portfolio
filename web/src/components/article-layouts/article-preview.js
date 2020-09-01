@@ -93,12 +93,7 @@ function VerticalArticlePreview(props) {
 }
 
 function ArticlePreview(props) {
-  let blog =
-    props.categories &&
-    props.categories.filter((category) => {
-      return category.title === "Blog";
-    }).length > 0;
-  const newLink = blog ? `/blog/${props.link}` : `/project/${props.link}`;
+  const newLink = props.type === "blog" ? `/blog/${props.link}` : `/project/${props.link}`;
   // Collapse large horizontal previews to vertical
   if (props.horizontal && props.size === "large") {
     return (

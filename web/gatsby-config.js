@@ -4,33 +4,6 @@ const {
 } = requireConfig("../studio/sanity.json");
 
 module.exports = {
-  siteMetadata: {
-    title: `Melissa Kwan`,
-    description: `Harvard junior studying computer science and philosophy.`,
-    author: `Melissa Kwan`,
-    menuLinks: [
-      {
-        name: `Melissa Kwan`,
-        link: `/index`,
-      },
-      {
-        name: `Projects`,
-        link: `/projects`,
-      },
-      {
-        name: `Philosophy`,
-        link: `/philosophy`,
-      },
-      {
-        name: `Portfolio`,
-        link: `/portfolio`,
-      },
-      {
-        name: `Contact`,
-        link: `/contact`,
-      },
-    ],
-  },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
