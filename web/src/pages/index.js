@@ -169,12 +169,10 @@ const IndexPage = (props) => {
           </div>
         </Grid>
         <Spacer height={6} />
-        <Container>
-          <Styled.h2 style={{ marginTop: "10px" }}>Where I've worked</Styled.h2>
-          <Experience nodes={experienceNodes} />
-        </Container>
+        <Styled.h2 style={{ marginTop: "10px" }}>Where I've worked</Styled.h2>
+        <Experience nodes={experienceNodes} />
         <Spacer height={6} />
-        <Container maxWidth={"800px"}>
+        <Container maxWidth={"800px"} margin="0px">
           <Styled.h2 style={{ marginTop: "10px" }}>Featured projects</Styled.h2>
           {projectNodes && (
             <PreviewGrid

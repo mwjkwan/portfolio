@@ -54,7 +54,7 @@ const useHorizontalStyles = makeStyles((orientation) => (
       maxWidth: "90vw",
     },
     tabs: {
-      borderRight: `1px solid #D3CFCC`,
+      borderBottom: `1px solid #D3CFCC`,
     },
 }));
 

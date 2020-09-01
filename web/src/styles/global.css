@@ -66,13 +66,8 @@ h1, h2, h3, h4, strong, b {
 
 p a, li a, .blockquote a {
   font-weight: 700;
-  color: #C63F3F;
+  color: #111111;
   text-decoration: none;
-  cursor: pointer !important;
-}
-
-p a:hover, li a:hover, .blockquote a:hover {
-  color: #760000;
   cursor: pointer !important;
 }
 
@@ -107,22 +102,6 @@ button {
   border: 16px solid #F8F8F8;
   min-width: 100vw;
   min-height: 80vh;
-}
-
-#bio {
-  max-width: 500px;
-}
-
-.default-profile {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-  font-size: 0;
-}
-
-.default-profile:hover{
-  outline: #C63F3F solid 3px;
-  font-size: 0;
 }
 
 .modal {
